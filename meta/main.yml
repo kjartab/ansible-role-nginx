@@ -31,11 +31,11 @@ galaxy_info:
   # the ones that apply to your role. If you don't see your
   # platform on this list, let us know and we'll get it added!
   #
-  platforms:
-  - name: Debian
-    versions:
-    - trusty
-    - xenial
+  # platforms:
+  # - name: Debian
+  #   versions:
+  #   - trusty
+  #   - xenial
   #- name: EL
   #  versions:
   #  - all
