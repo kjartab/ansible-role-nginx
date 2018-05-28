@@ -4,3 +4,14 @@
 
 - name: Install nginx
   apt: name=nginx state=present
+
+# Ref: https://bugs.launchpad.net/ubuntu/+source/nginx/+bug/1581864
+- name: Fix NGINX Debian bug.
+  shell: |
+    mkdir /etc/systemd/system/nginx.service.d;
+    printf "[Service]\nExecStartPost=/bin/sleep 0.1\n" > /etc/systemd/system/nginx.service.d/override.conf
+  become: true
+  become_user: root
+
+- name: reload nginx
+  service: name=nginx state=reloaded
